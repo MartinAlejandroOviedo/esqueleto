@@ -87,3 +87,9 @@ function esqueleto_content_width() {
     $GLOBALS['content_width'] = apply_filters( 'esqueleto_content_width', 800 );
 }
 add_action( 'after_setup_theme', 'esqueleto_content_width', 0 );
+
+
+function esqueleto_register_elementor_locations( $elementor_theme_manager ) {
+    $elementor_theme_manager->register_all_core_location();
+}
+add_action( 'elementor/theme/register_locations', 'esqueleto_register_elementor_locations' );
